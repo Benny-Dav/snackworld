@@ -1,7 +1,7 @@
 import React from 'react'
 
 import vodka from "./assets/images/vodka.png"
-import coke from "./assets/images/vodka.png"
+import coke from "./assets/images/coke.png"
 import salad from "./assets/images/salad.png"
 import cocktail from "./assets/images/cocktail.png"
 import continental from "./assets/images/continental.png"
@@ -64,7 +64,7 @@ const MenuPage = () => {
             </div>
 
             {/* food carousel */}
-            <div className='w-full h-[60vh]'>
+            <div className='w-full h-[50vh]'>
                 <Slider {...foodSliderSettings}>
                     {
                         foodOne.map((meal) => (
@@ -117,7 +117,7 @@ const MenuPage = () => {
 
                 <div>
                     <img src={coke} alt="" className='h-full w-10 object-cover bg-transparent ' />
-                    <div className='bg-[#666666] '></div>
+                    <div className=' '></div>
                 </div>
             </div>
 
@@ -128,19 +128,20 @@ const MenuPage = () => {
                         drinks.map((drink) => (
                             <div key={drink.id} className='h-full relative '>
                                 {/* image and description container*/}
-                                <div className='flex justify-between w-full ml-auto mr-auto h-full '>
+                                <div className='flex flex-col w-full ml-auto mr-auto h-full gap-4'>
+                                    {/* image */}
+                                    <div className='relative w-full h-full '>
+                                        <img src={drink.image} alt="" className='object-cover h-60 ml-auto mr-auto'/>
+                                    </div>
                                       {/* description */}
-                                      <div className=' flex items-center justify-center h-full w-[50%] bg-white z-10 mt-16 ml-10'>
+                                      <div className=' flex items-center justify-center h-full w-[50%] bg-white z-10  ml-auto mr-auto'>
                                         <div className="p-4">
                                             <h2 className="text-xl font-bold">{drink.name}</h2>
                                             <p className="text-sm text-gray-600">{drink.description}</p>
                                             <p className='text-xl font-extrabold'>₵{drink.price}</p>
                                         </div>
                                     </div>
-                                    {/* image */}
-                                    <div className='relative w-full h-full '>
-                                        <img src={drink.image} alt="" className='object-cover h-60 ' />
-                                    </div>
+                                    
 
                                   
                                 </div>
@@ -158,15 +159,15 @@ const MenuPage = () => {
 
             {/* footer */}
             {/* social media links */}
-            <div className='flex justify-center items-center mb-4'>
-                <hr className='w-20 text-white' />
+            <div className='flex justify-center items-center mb-4 gap-4'>
+                <hr className='w-32 text-white' />
                 <div>
                     <img src={insta} alt="" />
                 </div>
                 <div>
                     <img src={wa} alt="" />
                 </div>
-                <hr className='w-20 text-white' />
+                <hr className='w-32 text-white' />
             </div>
             {/* restaurant name */}
             <div className='text-center pb-2'>
